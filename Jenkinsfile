@@ -9,7 +9,7 @@ pipeline {
 			git (branch: 'main', url: 'https://github.com/lothoroger/capstone2023fdsfood.git')
 			
 			//Run maven wrapper
-			bat  'mvnw compile'
+			bat  'mvn compile'
 		   // sh "chmod +x -R /var/jenkins_home/workspace/CapstoneJenkinsDocker"
 		  //  sh './mvnw compile'
 			echo 'Building the Food Delivery Project with Maven compiler'			
