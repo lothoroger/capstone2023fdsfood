@@ -8,7 +8,7 @@ pipeline {
 			//Get code from GitHub repository
 			git (branch: 'main', url: 'https://github.com/lothoroger/capstone2023fdsfood.git')
 			
-			//Run maven wrapper
+			//Run maven wrapper - 2/20
 			bat  "mvn compile"
 			
 			echo 'Building the Food Delivery Project with Maven compiler'			
