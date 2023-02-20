@@ -43,7 +43,7 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-				sh 'mvnw clean package'
+				sh 'mvn clean package'
 				echo 'Building/Testing/Deploying  the Food Delivery  project with Maven'
 				}
 			}	
