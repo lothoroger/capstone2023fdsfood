@@ -38,6 +38,7 @@ export class PaymentComponent {
 
 
 ngOnInit(): void {
+    //Obtain the Role for pre-fill
     this.loggeduser = localStorage.getItem("role");
     this.initializeForm(this.loggeduser); 
 }
