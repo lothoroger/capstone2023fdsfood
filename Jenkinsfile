@@ -1,3 +1,4 @@
+/*
 pipeline {
 
 	agent any
@@ -33,4 +34,18 @@ pipeline {
 						}
 
 	}
+}
+*/
+
+pipeline {
+	agent any
+	
+	stages {
+		stage('Build') {
+			steps {
+				sh 'mvn clean package'
+				echo 'Building/Testing/Deploying  the Food Delivery  project with Maven'
+				}
+			}	
+	 }
 }
