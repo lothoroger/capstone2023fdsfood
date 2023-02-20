@@ -1,8 +1,10 @@
-/*
 pipeline {
 
 	agent any
-	
+	tools {
+		maven 'Maven 3.6.0'
+		jdk 'jdk11'
+	}
 	stages {
 		stage('Build') {
 			steps {
@@ -34,18 +36,4 @@ pipeline {
 						}
 
 	}
-}
-*/
-
-pipeline {
-	agent any
-	
-	stages {
-		stage('Build') {
-			steps {
-				sh 'mvn clean package'
-				echo 'Building/Testing/Deploying  the Food Delivery  project with Maven'
-				}
-			}	
-	 }
 }
