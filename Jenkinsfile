@@ -1,8 +1,7 @@
 pipeline {
 
 	agent any
-    tool {   maven: 'maven-3.6.0', type: 'maven'
-             sh: "${mvnHome}/bin/mvn package" }
+   
 	stages {
 		stage('Build') {
 		   
