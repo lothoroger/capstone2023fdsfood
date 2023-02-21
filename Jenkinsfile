@@ -10,7 +10,7 @@ pipeline {
 			git (branch: 'main', url: 'https://github.com/lothoroger/capstone2023fdsfood.git')
 			
 			//Run maven wrapper
-			node  'mvn compile'
+			powershell  'mvn compile'
 		   // sh "chmod +x -R /var/jenkins_home/workspace/CapstoneJenkinsDocker"
 		     // sh 'mvn compile'
 			echo 'Building the Food Delivery Project with Maven compiler'			
@@ -20,7 +20,7 @@ pipeline {
 		stage('Test') {
 			steps {
 		
-			node  'mvn test'
+			powershell   'mvn test'
 			//sh 'mvn test'
 			echo 'Testing the Food Delivery project with Maven test'
 			  }
@@ -28,7 +28,7 @@ pipeline {
 		
 		stage('Deploy') {
 			steps {
-			node 'mvn package'
+			powershell  'mvn package'
 			// sh 'mvn  package'
 			echo 'Deploy the Food Delivery project with Maven package'
 				  }			
