@@ -1,6 +1,11 @@
 pipeline {
 
-	agent any
+	agent {
+		docker {
+            image 'jenkinfds'
+            args '-u root' // switch to root user to modify file permissions
+        }
+	}
    
 	stages {
 		stage('Build') {
@@ -10,9 +15,10 @@ pipeline {
 			git (branch: 'main', url: 'https://github.com/lothoroger/capstone2023fdsfood.git')
 			
 			//Run maven wrapper
-			 bat  'mvnw compile'
+			 //bat  'mvnw compile'
 		    //sh "chmod +x -R /var/jenkins_home/workspace/CapstoneJenkinsDocker"
-		     sh './mvnw compile'
+		     chmod u+w /var/jenkins_home/workspace/CaapstoneFoodDelivery@tmp
+			 sh './mvnw compile'
 			echo 'Building the Food Delivery Project with Maven compiler'			
 			       }
 		               }
@@ -20,7 +26,7 @@ pipeline {
 		stage('Test') {
 			steps {
 		
-			 bat   'mvnw test'
+			// bat   'mvnw test'
 			 sh '/.mvnw test'
 			echo 'Testing the Food Delivery project with Maven test'
 			  }
