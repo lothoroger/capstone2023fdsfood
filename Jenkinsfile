@@ -1,13 +1,11 @@
 pipeline {
 
 	agent any
-	tools { 
-      maven 'M2' 
-      jdk 'jdk11' 
-    }
+
 	stages {
 		stage('Build') {
-		   
+		   def mvnHome = tool name: 'maven-3.6.0', type: 'maven'
+                    sh "${mvnHome}/bin/mvn package"
 			steps {
 			//Get code from GitHub repository
 			git (branch: 'main', url: 'https://github.com/lothoroger/capstone2023fdsfood.git')
