@@ -14,6 +14,7 @@ pipeline {
 		     sh 'chmod +x ./mvnw'
 			 sh './mvnw wrapper:wrapper'
 			 sh './mvnw clean install'
+			 sh 'echo ${WORKSPACE}'
 			 sh './mvnw compile'
 			echo 'Building the Food Delivery Project with Maven compiler'			
 			       }
