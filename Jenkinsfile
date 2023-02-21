@@ -12,7 +12,7 @@ pipeline {
 			//Run maven wrapper
 			 bat  'mvnw compile'
 		    //sh "chmod +x -R /var/jenkins_home/workspace/CapstoneJenkinsDocker"
-		     // sh 'mvn compile'
+		     sh './mvnw compile'
 			echo 'Building the Food Delivery Project with Maven compiler'			
 			       }
 		               }
@@ -21,15 +21,15 @@ pipeline {
 			steps {
 		
 			 bat   'mvnw test'
-			 //sh 'mvn test'
+			 sh '/.mvnw test'
 			echo 'Testing the Food Delivery project with Maven test'
 			  }
 			       }
 		
 		stage('Deploy') {
 			steps {
-			bat  'mvnw package'
-			//sh 'mvn  package'
+			//bat  'mvnw package'
+		    sh './mvnw  package'
 			echo 'Deploy the Food Delivery project with Maven package'
 				  }			
 						}
