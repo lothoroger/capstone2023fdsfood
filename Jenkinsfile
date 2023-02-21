@@ -13,6 +13,7 @@ pipeline {
 		    //sh "chmod +x -R /var/jenkins_home/workspace/CapstoneJenkinsDocker"
 		     sh 'chmod +x ./mvnw'
 			 sh './mvnw wrapper:wrapper'
+			 sh './mvnw clean install'
 			 sh './mvnw compile'
 			echo 'Building the Food Delivery Project with Maven compiler'			
 			       }
