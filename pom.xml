@@ -39,6 +39,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>dockerFood</finalName>
 		<plugins>
 			
 		</plugins>
