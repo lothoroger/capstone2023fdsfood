@@ -1,12 +1,6 @@
 pipeline {
 
-	agent {
-		docker {
-            image 'jenkinfds'
-            args '-u root' // switch to root user to modify file permissions
-        }
-	}
-   
+	agent any
 	stages {
 		stage('Build') {
 		   
