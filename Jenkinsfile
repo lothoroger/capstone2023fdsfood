@@ -17,7 +17,7 @@ pipeline {
 			//Run maven wrapper
 			// bat  'mvnw compile'
 		    //sh "chmod +x -R /var/jenkins_home/workspace/CapstoneJenkinsDocker"
-		     chmod u+w /var/jenkins_home/workspace/CaapstoneFoodDelivery@tmp
+		     chmod u+w /var/jenkins_home/workspace/CaapstoneFoodDelivery
 			 sh './mvnw compile'
 			echo 'Building the Food Delivery Project with Maven compiler'			
 			       }
